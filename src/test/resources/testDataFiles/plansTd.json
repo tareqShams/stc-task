@@ -1,0 +1,65 @@
+[
+  {
+    "testCaseTitle": "Check Data for KSA",
+    "country": "KSA",
+    "planDm": [
+      {
+        "type": "لايت",
+        "currency": "ريال سعودي",
+        "price": "15"
+      },
+      {
+        "type": "الأساسية",
+        "currency": "ريال سعودي",
+        "price": "25"
+      },
+      {
+        "type": "بريميوم",
+        "currency": "ريال سعودي",
+        "price": "60"
+      }
+    ]
+  },
+  {
+    "testCaseTitle": "Check Data for Kuwait",
+    "country": "KW",
+    "planDm": [
+      {
+        "type": "لايت",
+        "currency": "دينار كويتي",
+        "price": "1.2"
+      },
+      {
+        "type": "الأساسية",
+        "currency": "دينار كويتي",
+        "price": "2.5"
+      },
+      {
+        "type": "بريميوم",
+        "currency": "دينار كويتي",
+        "price": "4.8"
+      }
+    ]
+  },
+  {
+    "testCaseTitle": "Check Data for Bahrain",
+    "country": "BH",
+    "planDm": [
+      {
+        "type": "لايت",
+        "currency": "دينار بحريني",
+        "price": "2"
+      },
+      {
+        "type": "الأساسية",
+        "currency": "دينار بحريني",
+        "price": "3"
+      },
+      {
+        "type": "بريميوم",
+        "currency": "دينار بحريني",
+        "price": "6"
+      }
+    ]
+  }
+]
