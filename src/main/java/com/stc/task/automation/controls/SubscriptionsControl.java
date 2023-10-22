@@ -2,6 +2,7 @@ package com.stc.task.automation.controls;
 
 import com.stc.task.automation.constants.GeneralConstants;
 import com.stc.task.automation.dataModels.PlanDm;
+import com.stc.task.automation.navigation.Navigation;
 import com.stc.task.automation.pages.SubscriptionPage;
 import com.paulhammant.ngwebdriver.NgWebDriver;
 import org.openqa.selenium.WebDriver;
@@ -16,11 +17,11 @@ public class SubscriptionsControl extends MainControl {
 
     public String selectCountry(String country) {
         if (country.equalsIgnoreCase("KSA")) {
-            driver.get("https://subscribe.stctv.com/sa-ar");
+            Navigation.KSA.navigate(driver);
         } else if (country.equalsIgnoreCase("KW")) {
-            driver.get("https://subscribe.stctv.com/kw-ar");
+            Navigation.KW.navigate(driver);
         } else if (country.equalsIgnoreCase("BH")) {
-            driver.get("https://subscribe.stctv.com/bh-ar");
+            Navigation.BH.navigate(driver);
         }
         return GeneralConstants.SUCCESS;
     }

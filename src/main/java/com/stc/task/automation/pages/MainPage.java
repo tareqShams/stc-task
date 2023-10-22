@@ -15,9 +15,9 @@ import java.time.temporal.ChronoUnit;
 public class MainPage {
 
     // Initialize web drivers
-    public WebDriver driver;
+    public static WebDriver driver;
     public NgWebDriver ngDriver;
-    public JavascriptExecutor jsDriver;
+    public static JavascriptExecutor jsDriver;
 
     public MainPage(WebDriver driver, NgWebDriver ngDriver) {
         this.driver = driver;
@@ -39,18 +39,24 @@ public class MainPage {
         jsDriver.executeScript("window.scrollTo(0, -document.body.scrollHeight)");
     }
 
-    public void scrollToElement(WebElement element) {
+    public static void scrollToElement(WebElement element) {
         jsDriver.executeScript("arguments[0].scrollIntoView();", element);
     }
 
 
-    public void jsClick(WebElement element) {
+    public static void jsClick(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.of(10, ChronoUnit.SECONDS));
         scrollToElement(element);
         jsDriver.executeScript("return document.readyState").toString().equals("complete");
         wait.until(ExpectedConditions.elementToBeClickable(element));
         jsDriver.executeScript("arguments[0].click();", element);
         jsDriver.executeScript("return document.readyState").toString().equals("complete");
+    }
+
+    public static String getLabelValue(WebDriver driver, By by){
+        WebElement element = driver.findElement(by);
+        return element.getText();
+
     }
 
 }
