@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public enum Navigation {
-    KSA("bh-contry-flag", "bh-contry-lable"),
-    BH("sa-contry-flag", "sa-contry-lable"),
+    KSA("sa-contry-flag", "bh-contry-lable"),
+    BH("bh-contry-flag", "sa-contry-lable"),
     KW("kw-contry-flag" , "kw-contry-lable");
 
 
@@ -30,7 +30,7 @@ public enum Navigation {
         String label = MainPage.getLabelValue(driver, By.id(this.checkLabel));
         if (label.equalsIgnoreCase(this.checkLabel))
             return;
-        MainPage.jsClick(driver.findElement(By.id("arrow")));
-        MainPage.jsClick(driver.findElement(this.navigationElement));
+        driver.findElement(By.id("arrow")).click();
+        driver.findElement(this.navigationElement).click();
     }
 }

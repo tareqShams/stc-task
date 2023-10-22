@@ -45,10 +45,8 @@ public class MainPage {
 
 
     public static void jsClick(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.of(10, ChronoUnit.SECONDS));
         scrollToElement(element);
         jsDriver.executeScript("return document.readyState").toString().equals("complete");
-        wait.until(ExpectedConditions.elementToBeClickable(element));
         jsDriver.executeScript("arguments[0].click();", element);
         jsDriver.executeScript("return document.readyState").toString().equals("complete");
     }

@@ -1,10 +1,10 @@
 package com.stc.task.automation.controls;
 
-import com.stc.task.automation.constants.GeneralConstants;
 import com.stc.task.automation.dataModels.PlanDm;
 import com.stc.task.automation.navigation.Navigation;
 import com.stc.task.automation.pages.SubscriptionPage;
 import com.paulhammant.ngwebdriver.NgWebDriver;
+import com.stc.task.automation.utils.Log;
 import org.openqa.selenium.WebDriver;
 
 import java.util.ArrayList;
@@ -15,7 +15,8 @@ public class SubscriptionsControl extends MainControl {
         super(driver, ngWebDriver);
     }
 
-    public String selectCountry(String country) {
+    public void selectCountry(String country) {
+        Log.info(String.format("Selecting Country %s",country));
         if (country.equalsIgnoreCase("KSA")) {
             Navigation.KSA.navigate(driver);
         } else if (country.equalsIgnoreCase("KW")) {
@@ -23,7 +24,6 @@ public class SubscriptionsControl extends MainControl {
         } else if (country.equalsIgnoreCase("BH")) {
             Navigation.BH.navigate(driver);
         }
-        return GeneralConstants.SUCCESS;
     }
 
     public ArrayList<PlanDm> getPlansData() {

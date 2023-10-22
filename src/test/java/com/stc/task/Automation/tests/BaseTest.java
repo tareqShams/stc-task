@@ -226,7 +226,6 @@ public class BaseTest {
         File extentReportNameAfterAddTestCaseStatus = new File(System.getProperty("user.dir") + extentReportFilePath +
                 GeneralConstants.STRING_DELIMETER +
                 buildNumber + GeneralConstants.STRING_DELIMETER +
-                userType + GeneralConstants.STRING_DELIMETER +
                 dateTime + GeneralConstants.STRING_DELIMETER + "SuccessTCs" + success_tests + GeneralConstants.STRING_DELIMETER + "FailedTCs" + fail_tests + GeneralConstants.STRING_DELIMETER + "SkippedTCs" + skip_tests + ".html");
         if (extentReportNameBeforeAddTestCaseStatus.renameTo(extentReportNameAfterAddTestCaseStatus)) {
             Log.info("File renamed");

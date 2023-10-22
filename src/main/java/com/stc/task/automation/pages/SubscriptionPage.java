@@ -22,14 +22,14 @@ public class SubscriptionPage extends MainPage {
         List<WebElement> titles = driver.findElements(By.className("plan-title"));
         List<WebElement> prices = driver.findElements(By.className("price"));
         List<WebElement> currencies = driver.findElements(By.xpath("//div[@class='price']/i"));
-
         ArrayList<PlanDm> plansDm =new ArrayList<>();
-        PlanDm planDm = new PlanDm();
         try {
             for (int i = 0 ; i<titles.size();i++) {
+                PlanDm planDm = new PlanDm();
                 planDm.setType(titles.get(i).getText());
                 planDm.setPrice(prices.get(i).getText());
                 planDm.setCurrency(currencies.get(i).getText());
+                Log.info(String.format("found plan details %s, %s, %s",planDm.getType(),planDm.getPrice(),planDm.getCurrency()));
                 plansDm.add(planDm);
             }
 
